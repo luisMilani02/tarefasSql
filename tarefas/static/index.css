@@ -1,0 +1,26 @@
+.conteudo {
+    text-align: center;
+    font-family: sans-serif;
+}
+
+.tarefas {
+    display: flex;
+}
+
+.a-botao {
+    background-color: rgb(196, 196, 196);
+    margin: 0px 15px;
+    width: 50px;
+    height: 50px;
+    align-content: center;
+    border-radius: 15px;
+    border-color: black
+}
+
+li {
+    font-size: 25px;
+    margin-top: 10px;
+    margin-left: 50px;
+    list-style-type: none;
+    
+}

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarefas</title>
+
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'index.css' %}">
+    <link rel="stylesheet" href="{% static 'geral.css' %}">
+</head>
+<body>
+    <div class="conteudo">
+        <h1>Tarefas</h1>
+        
+        <div class="formulario">
+            <form action="/" method="post">
+                {% csrf_token %}
+                {{ form.conteudoTarefa }}
+                <button type="submit">Enviar</button>
+            </form>
+
+            <ul>
+                {% for tarefa in tarefas %}
+                    <div class="tarefas">
+                        <a href="{% url 'atualizar' tarefa.id %}" class="a-botao">Atualizar</a>
+                        <a href="{% url 'deletar' tarefa.id %}" class="a-botao">Apagar</a>
+            
+                        {% if tarefa.completa %}
+                            <li style="text-decoration: line-through;">{{ tarefa.conteudoTarefa }}</li>
+                        {% else %}
+                            <li>{{ tarefa.conteudoTarefa }}</li>
+                        {% endif %}
+                    </div>
+                    <br>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

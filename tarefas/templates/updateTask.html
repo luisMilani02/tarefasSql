@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarefas</title>
+
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'update.css' %}">
+    <link rel="stylesheet" href="{% static 'geral.css' %}">
+</head>
+<body>
+    <h3>Atualizar tarefa</h3>
+    
+    <form method="post" action="">
+        {% csrf_token %}
+
+        {{ form }}
+        <input type="submit" value="Atualizar tarefa">
+    </form>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarefas</title>
+
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'delete.css' %}">
+    <link rel="stylesheet" href="{% static 'geral.css' %}">
+</head>
+<body>
+    <p>Tem certeza que quer apagar "{{ item }}"? </p>
+    <a href="{% url 'index' %}">Cancelar</a>
+
+    <form action="" method="post">
+        {% csrf_token %}
+        <input type="submit" value="Apagar tarefa">
+    </form>
+</body>
+</html>
